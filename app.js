@@ -8,6 +8,8 @@ const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./swagger.yaml');
 
 var QARouter = require('./routes/QA');
+const TicketRouter = require('./routes/Ticket');
+const AgentRouter = require('./routes/Agent');
 
 var app = express();
 
@@ -20,5 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use('/api/v1/qa', QARouter);
+app.use('/api/v1/agent', AgentRouter);
+app.use('/api/v1/ticket', TicketRouter);
 
 module.exports = app;

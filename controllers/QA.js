@@ -168,7 +168,7 @@ exports.getAllAgents = async (req, res) =>
 
 exports.getAgent = async (req, res) =>
 {
-    const agentId = req.params.id;
+    const agentId = req.body.id;
     try
     {
         const agent = await AGENT.findOne({ where: { id: agentId } });
