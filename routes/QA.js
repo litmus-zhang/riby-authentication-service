@@ -9,6 +9,6 @@ QArouter
     .post('/resetPassword', QAcontroller.ResetPassword)
     .post('/createAgent', QAcontroller.createAgent)
     .get('/getAgents', QAcontroller.getAllAgents)
-    .get('/getAgent/:id', QAcontroller.getAgent)
+    .get('/getAgents/:id', QAcontroller.getAgent)
 
 module.exports = QArouter;
